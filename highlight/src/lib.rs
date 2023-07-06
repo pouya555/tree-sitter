@@ -382,6 +382,9 @@ impl HighlightConfiguration {
             }));
     }
 
+    // Return the list of this configuration's capture names that are neither present in the
+    // list of predefined 'canonical' names nor start with an underscore (denoting 'private' captures
+    // used as part of capture internals).
     pub fn nonconformant_capture_names(&self) -> Vec<&String> {
         return self
             .names()
